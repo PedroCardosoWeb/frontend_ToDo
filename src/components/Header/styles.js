@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    heigth: 110px;
+    height: 80px;
     background: #20295F;
     border-bottom: 5px solid #EE6B26;   
     display: flex;
@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const RigthSide = styled.div`
     width: 50%;
-    heigth: 110px;
+    heigth: 80px;
     background: #20295F;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@ export const RigthSide = styled.div`
     #notification {
         img {
             width: 25px;
-            heigth: 30px;
+            height: 30px;
         }
 
         span{
@@ -37,30 +37,34 @@ export const RigthSide = styled.div`
             color: #EE6B26;
             padding: 5px 7px;
             border-radius: 50%;
+            position: relative;
+            top: -20px;
+            right: 10px;
         }
 
         &:hover {
             opacity: 0.5;
         }
-
-        .divisor::after{
-            content: "|";
-            margin: 0 10px;
-            color: #FFF;
-        }
+        
     }
+
+    .divisor::after{
+        content: "|";
+        margin: 0 10px;
+        color: #FFF;
+    }
+
 `
 
 export const LeftSide = styled.div`
     width: 50%;
-    heigth: 110px;
+    height: 80px;
     background: #20295F;
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 20px;
     img {
-        width: 100px;
-        heigth: 100px;
-        padding: 10px;
+        width: 90px;
+        height: 40px;
     }
 `
