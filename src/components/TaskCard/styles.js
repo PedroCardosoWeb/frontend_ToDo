@@ -15,10 +15,11 @@ export const Container = styled.span`
     margin: 10px;
     
     cursor: pointer;
-    transition: all 0.5s easy;
+    transition: all 0.4s ease;
+    opacity: ${props => props.done ? 0.6 : 1};
 
     &:hover{
-        opacity: 0.5;
+        opacity: 0.6;
     }
 `
 

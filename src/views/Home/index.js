@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import * as S from './styles';
+
+import api from '../../services/api';
 
 //Componentes
 import Header from '../../components/Header';
@@ -8,10 +11,27 @@ import FilterCard from '../../components/FilterCard';
 import TaskCard from '../../components/TaskCard';
 
 function Home() {
-  const [filterActived, setFilterActived] = useState();
+  const [filterActived, setFilterActived] = useState('all');
+  const [tasks, setTasks] = useState([]);
+
+  async function loadTasks(){
+    await api.get(`/task/filter/${filterActived}/11:11:11:11:11:11`)
+      .then(response => {
+        setTasks(response.data)
+      })
+  }
+
+  function Notification(){
+    setFilterActived('late');
+  }
+
+  useEffect(() => {
+    loadTasks();
+  }, [filterActived, loadTasks])
+
   return (
     <S.Container>
-      <Header />
+      <Header clickNotification={Notification} />
 
       <S.FilterArea>
       <button type="button" onClick={() => setFilterActived("all")}>
@@ -36,20 +56,18 @@ function Home() {
       </S.FilterArea>
 
       <S.Title>
-        <h2>Tarefas</h2>  
+        <h2>{filterActived == 'late' ? 'TAREFAS ATRASADAS' : 'TAREFAS'}</h2>  
       </S.Title>  
 
       <S.Content>
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
+        {
+          tasks.map(t => (
+          <Link to={`/task/${t._id}`}>  
+            <TaskCard type={t.type} title={t.title} when={t.when} done={t.done} />
+          </Link>
+          ))
+        }
+
       </S.Content>
 
       <Footer />

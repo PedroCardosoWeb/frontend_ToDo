@@ -27,6 +27,11 @@ export const RigthSide = styled.div`
     }
     
     #notification {
+
+        background: none;
+        border:none;
+        cursor: pointer;
+        
         img {
             width: 25px;
             height: 30px;
@@ -45,7 +50,7 @@ export const RigthSide = styled.div`
         &:hover {
             opacity: 0.5;
         }
-        
+
     }
 
     .divisor::after{
