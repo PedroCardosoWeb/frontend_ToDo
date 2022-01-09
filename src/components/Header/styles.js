@@ -15,7 +15,15 @@ export const RigthSide = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    a {
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+    }
+
+    a, button {
         color: #FFF;
         font-weigth: bold;
         text-decoration: none;
@@ -58,6 +66,8 @@ export const RigthSide = styled.div`
         margin: 0 10px;
         color: #FFF;
     }
+
+    
 
 `
 
