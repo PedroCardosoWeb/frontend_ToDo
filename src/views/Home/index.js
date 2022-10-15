@@ -17,6 +17,7 @@ function Home() {
   const [tasks, setTasks] = useState([]);
   const [redirect, setRedirect] = useState(false);
 
+  // eslint-disable-next-line
   async function loadTasks(){
     await api.get(`/task/filter/${filterActived}/${isConnected}`)
       .then(response => {
@@ -41,28 +42,28 @@ function Home() {
 
       <S.FilterArea>
       <button type="button" onClick={() => setFilterActived("all")}>
-        <FilterCard title="Todos" actived={filterActived == 'all'} />
+        <FilterCard title="Todos" actived={filterActived === 'all'} />
       </button>
 
       <button type="button" onClick={() => setFilterActived("today")}>
-        <FilterCard title="Hoje" actived={filterActived == 'today'} />
+        <FilterCard title="Hoje" actived={filterActived === 'today'} />
       </button>
         
       <button type="button" onClick={() => setFilterActived("week")}>
-        <FilterCard title="Semana" actived={filterActived == 'week'} />
+        <FilterCard title="Semana" actived={filterActived === 'week'} />
       </button>
         
       <button type="button" onClick={() => setFilterActived("month")}>
-        <FilterCard title="Mês" actived={filterActived == 'month'} />
+        <FilterCard title="Mês" actived={filterActived === 'month'} />
       </button>
         
       <button type="button" onClick={() => setFilterActived("year")}>
-        <FilterCard title="Ano" actived={filterActived == 'year'} />
+        <FilterCard title="Ano" actived={filterActived === 'year'} />
       </button>
       </S.FilterArea>
 
       <S.Title>
-        <h2>{filterActived == 'late' ? 'TAREFAS ATRASADAS' : 'TAREFAS'}</h2>  
+        <h2>{filterActived === 'late' ? 'TAREFAS ATRASADAS' : 'TAREFAS'}</h2>  
       </S.Title>  
 
       <S.Content>
