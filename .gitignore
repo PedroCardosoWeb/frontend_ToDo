@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/react-toDo-project/node_modules
+/cra-to-next/node_modules
 /.pnp
 .pnp.js
 
