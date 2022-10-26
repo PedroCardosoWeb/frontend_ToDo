@@ -7,6 +7,10 @@
 /.pnp
 .pnp.js
 
+# next
+/next
+/cra-to-next/next
+
 # testing
 /coverage
 
