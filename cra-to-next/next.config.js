@@ -1,20 +1,18 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-//   swcMinify: true,
-// }
-// module.exports = nextConfig
 module.exports = {
-  rewrites(){
+  async redirects(){
     return[
       {
-        source: '/:path*',
-        destination: '/:path*'
+        source: '/',
+        destination: 'http://localhost:4000',
+        permanent: false,
+        basePath: false
       },
       {
         source: '/:path*',
-        destination: 'http://localhost:4000/:path*'
+        destination: 'http://localhost:4000/:path*',
+        permanent: false
       }
     ]
   }
 }
+
