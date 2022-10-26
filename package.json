@@ -20,7 +20,7 @@
     "next": "13.0.0"
   },
   "scripts": {
-    "start": "npm run --prefix cra-to-next start & npm run --prefix react-toDo-project start",
+    "start": "npm run --prefix cra-to-next start && npm run --prefix react-toDo-project start",
     "test": "start npm run --prefix cra-to-next start && start npm run --prefix react-toDo-project start",
     "dev": "npm run --prefix react-toDo-project serve -s build -l 4000 & npm run --prefix cra-to-next dev",
     "build": "npm run --prefix react-toDo-project serve -s build -l 4000 & npm run --prefix cra-to-next build"
